@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&display=swap" rel="stylesheet">
+
+        <style>
+
+            .small-text {
+                font-size: 10px;
+            }
+
+            .big-text {
+                font-size: 20px;
+            }
+
+            .banner {
+                align-items: center;
+                display: flex;
+                margin: 0 auto;
+                max-width: 1240px;
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .banner--dark-theme {
+                background-color: #222222;
+            }
+
+            .banner--dark-theme .banner__header {
+                color: white;
+            }
+
+            .banner--dark-theme .banner__subheader{
+                color: white;
+            }
+
+
+            .banner__header {
+                font-family: "Bitter", serif;
+                font-size: 1.5rem;
+                font-weight: 800;
+            }
+
+            .banner__subheader {
+                font-family: "Bitter", serif;
+                font-size: 4rem;
+                font-weight: 800;
+            }
+
+
+            .button {
+                padding: 1em;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="banner">
+            <header>
+                <h1 class="banner__header">chogud</h1>
+                <p class="banner__subheader">A better cheesecake for the world! 🙉</p>
+                <button type="button" class="banner__button">Button</button>
+            </header>
+        </div>
+
+        <!-- <div class="banner banner--dark-theme">
+            <header>
+                <h1 class="banner__header">chogud</h1>
+                <p class="banner__subheader">A better cheesecake for the world! 🙈</p>
+            </header>
+        </div> -->
+        
+    </body>
+    <script>
+        let banner = document.querySelector("div.banner");
+        let button = document.querySelector(".banner__button");
+        console.log(banner, button);
+
+        button.onclick = () => {
+            console.log("I was clicked.");
+            let poo = banner.getAttribute("class");
+            if(poo === "banner") {
+                banner.setAttribute("class", "banner banner--dark-theme");
+            } else {
+                banner.setAttribute("class", "banner");
+            }
+        };
+        
+
+    </script>
+</html>
