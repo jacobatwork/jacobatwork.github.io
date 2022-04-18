@@ -31,8 +31,19 @@
                 color: white;
             }
 
-            .banner--dark-theme .banner__subheader{
+            .banner--dark-theme .banner__subheader {
                 color: white;
+            }
+
+            .banner--dark-theme .button {
+                color: white;
+                background-color: transparent;
+                border: 0.1rem solid white;
+            }
+
+            .banner--dark-theme .button:hover {
+                color: #222222;
+                background-color: white;
             }
 
 
@@ -50,7 +61,24 @@
 
 
             .button {
-                padding: 1em;
+                /* Thank you Federico Dossena! (fdossena.com)*/
+                background-color: transparent;
+                border: 0.1rem solid #222222;
+                border-radius: 0.61rem;
+                color: #222222;
+                cursor: pointer;
+                display: inline-block;
+                font-family: "Bitter", serif;
+                font-size: 1rem;
+                font-weight: 600;
+                padding: 1rem;
+                margin: 0 1rem 1rem 0;
+                transition: all 0.2s;
+            }
+
+            .button:hover {
+                color: white;
+                background-color: #222222;
             }
 
 
@@ -62,7 +90,7 @@
             <header>
                 <h1 class="banner__header">chogud</h1>
                 <p class="banner__subheader">A better cheesecake for the world! 🙉</p>
-                <button type="button" class="banner__button">Button</button>
+                <button type="button" class="button">Theme switch</button>
             </header>
         </div>
 
@@ -76,7 +104,7 @@
     </body>
     <script>
         let banner = document.querySelector("div.banner");
-        let button = document.querySelector(".banner__button");
+        let button = document.querySelector(".button");
         console.log(banner, button);
 
         button.onclick = () => {
