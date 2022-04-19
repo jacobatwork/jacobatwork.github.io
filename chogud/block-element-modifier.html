@@ -46,6 +46,14 @@
                 background-color: white;
             }
 
+            .banner__b-word {
+                cursor: pointer;
+                text-decoration: underline dotted;
+            }
+
+            .banner__monkey-emoji {
+                cursor: pointer;
+            }
 
             .banner__header {
                 font-family: "Bitter", serif;
@@ -89,7 +97,7 @@
         <div class="banner">
             <header>
                 <h1 class="banner__header">chogud</h1>
-                <p class="banner__subheader">A better cheesecake for the world! 🙉</p>
+                <p class="banner__subheader">A <span class="banner__b-word">better</span> cheesecake for the world! <span class="banner__monkey-emoji">🙉</span></p>
                 <button type="button" class="button">Theme switch</button>
             </header>
         </div>
@@ -103,20 +111,44 @@
         
     </body>
     <script>
+        /* Monkey Emoji Switch */
+        function checkMahMonkey(){
+            let poo = document.querySelector("div.banner");
+            let emoji = document.querySelector(".banner__monkey-emoji");
+            if(poo.classList.contains("banner--dark-theme")){
+                emoji.textContent = "🙈";
+            } else {
+                emoji.textContent = "🙉";
+            };
+        }
+
+        /* Theme Switch */
         let banner = document.querySelector("div.banner");
         let button = document.querySelector(".button");
-        console.log(banner, button);
 
         button.onclick = () => {
-            console.log("I was clicked.");
             let poo = banner.getAttribute("class");
             if(poo === "banner") {
                 banner.setAttribute("class", "banner banner--dark-theme");
             } else {
                 banner.setAttribute("class", "banner");
+            };
+            checkMahMonkey();
+        };
+
+        /* B-Word Switch */
+        let bWord = document.querySelector(".banner__b-word");
+
+        bWord.onclick = () => {
+            if(bWord.textContent === "better") {
+                bWord.textContent = "butter";
+            } else {
+                bWord.textContent = "better";
             }
         };
         
+        
+
 
     </script>
 </html>
