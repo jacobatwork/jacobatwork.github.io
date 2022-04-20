@@ -16,10 +16,11 @@
 
             .banner {
                 align-items: center;
+                background-color: white;
                 display: flex;
                 margin: 0 auto;
                 max-width: 1240px;
-                padding: 1rem;
+                padding: 2rem;
                 width: 100%;
             }
 
@@ -51,9 +52,9 @@
                 text-decoration: underline dotted;
             }
 
-            .banner__monkey-emoji {
+            /*.banner__monkey-emoji {
                 cursor: pointer;
-            }
+            }*/
 
             .banner__header {
                 font-family: "Bitter", serif;
@@ -66,7 +67,15 @@
                 font-size: 4rem;
                 font-weight: 800;
             }
+            
+            .body {
+                margin: 0;
+                background-color: white;
+            }
 
+            .body--dark-theme {
+                background-color: #222222;
+            }
 
             .button {
                 /* Thank you Federico Dossena! (fdossena.com)*/
@@ -93,7 +102,7 @@
         </style>
 
     </head>
-    <body>
+    <body class="body">
         <div class="banner">
             <header>
                 <h1 class="banner__header">chogud</h1>
@@ -124,14 +133,17 @@
 
         /* Theme Switch */
         let banner = document.querySelector("div.banner");
+        let body = document.querySelector("body.body")
         let button = document.querySelector(".button");
 
         button.onclick = () => {
             let poo = banner.getAttribute("class");
             if(poo === "banner") {
                 banner.setAttribute("class", "banner banner--dark-theme");
+                body.setAttribute("class", "body body--dark-theme");
             } else {
                 banner.setAttribute("class", "banner");
+                body.setAttribute("class", "body");
             };
             checkMahMonkey();
         };
