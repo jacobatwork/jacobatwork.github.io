@@ -1,2 +1,2 @@
 # chogud
-A pretend landing page
+A landing page
